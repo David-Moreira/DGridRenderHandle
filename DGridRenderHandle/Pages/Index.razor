@@ -1,0 +1,29 @@
+﻿@using Blazorise.DataGrid
+@page "/"
+
+
+
+    <DataGridWrapper TItem="Test" Data="Data">
+        <DataGridColumns>
+            <DataGridColumn TItem="Test" Field="@nameof(Test.name)" Caption="Testing" >
+
+            </DataGridColumn>
+        </DataGridColumns>
+    </DataGridWrapper>
+
+
+
+
+
+
+
+
+@code{
+
+    public List<Test> Data { get; set; } = new List<Test>() { new Test() {name= "1" }  };
+
+    public class Test
+    {
+        public string name { get; set; }
+    }
+}
