@@ -9,7 +9,7 @@ namespace DGridRenderHandle.Shared
     public partial class DataGridWrapper<TItem> : DataGrid<TItem>
     {
 
-        public DataGridWrapper()
+        public DataGridWrapper() : base()
         {
             base.PageSize = 20;
         }

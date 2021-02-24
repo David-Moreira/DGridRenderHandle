@@ -2,14 +2,24 @@
 @page "/"
 
 
-
-    <DataGridWrapper TItem="Test" Data="Data">
+@*<DataGridWrapper TItem="Test" Data="Data">
         <DataGridColumns>
             <DataGridColumn TItem="Test" Field="@nameof(Test.name)" Caption="Testing" >
 
             </DataGridColumn>
         </DataGridColumns>
-    </DataGridWrapper>
+    </DataGridWrapper>*@
+
+<DataGrid Data="EmptyData"
+          TItem="Test"
+          ShowPager="true">
+    <EmptyTemplate>No records... :(</EmptyTemplate>
+    <DataGridColumns>
+        <DataGridColumn TItem="Test" Field="@nameof(Test.name)" Caption="Testing">
+
+        </DataGridColumn>
+    </DataGridColumns>
+</DataGrid>
 
 
 
@@ -19,8 +29,8 @@
 
 
 @code{
-
-    public List<Test> Data { get; set; } = new List<Test>() { new Test() {name= "1" }  };
+    public List<Test> EmptyData { get; set; } = new List<Test>();
+    public List<Test> Data { get; set; } = new List<Test>() { new Test() { name = "1" } };
 
     public class Test
     {
